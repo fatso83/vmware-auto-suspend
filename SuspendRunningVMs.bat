@@ -1,5 +1,6 @@
 @echo off
 echo SuspendRunningVMs Command (x64)...
+echo Ideas for improving this? Visit https://github.com/fatso83/vmware-auto-suspend
 
 SETLOCAL
 REM Specify where vmrun.exe can be located
