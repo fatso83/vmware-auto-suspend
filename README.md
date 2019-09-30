@@ -17,6 +17,7 @@ VMWare Community forum][vmware].
 ## Installing
 
 ### Create a Scheduled Task in Windows Task Scheduler 
+<img src="./events.png" alt="A sample task using Norwegian Windows 10">
 The heart of this work-around is to create a scheduled task using the Windows Task Scheduler.  The scheduled task should be triggered by certain system events (not by a specific time-of-day schedule).
 
 There are several different events that must trigger this task, as some events apply to only certain shutdown sequences (i.e. command line-initiated, Windows UI initiated, power button, system updates, etc.)
