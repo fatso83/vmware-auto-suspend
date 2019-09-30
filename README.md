@@ -11,7 +11,8 @@ events associated with a logout.
 
 While this feature does exist in VMWare, you have to convert your VM into
 a shared vm, which involves losing a lot of features. This doesn't have 
-that drawback.
+that drawback. The original solution was published by @drueter on the 
+VMWare Community forum.
 
 ## Installing
 
@@ -90,7 +91,7 @@ finally was given a hint to [a useful thread][vmware] that contained
 _exactly_ what I was interested in. 
 
 But as that was kind of hidden and in a form that is hard to contribute to
-if you find bugs in the solutin, I decided to improve on this situation
+if you find bugs in the solution, I decided to improve on this situation
 by dumping the solution on GitHub. That fixes troublesome copy-paste
 issues and makes it possible for some clever individual to perhaps contribute
 a script that automates the manual steps involved in making the event
