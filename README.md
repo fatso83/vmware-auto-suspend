@@ -11,8 +11,8 @@ events associated with a logout.
 
 While this feature does exist in VMWare, you have to convert your VM into
 a shared vm, which involves losing a lot of features. This doesn't have 
-that drawback. The original solution was published by @drueter on the 
-VMWare Community forum.
+that drawback. The [original solution was published by @drueter on the 
+VMWare Community forum][vmware].
 
 ## Installing
 
