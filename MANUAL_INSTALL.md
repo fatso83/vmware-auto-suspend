@@ -58,7 +58,15 @@ Source:Microsoft Windows security auditing.
 Event ID:4647
 ```
 
-#### Changes from original solution
+#### Actions tab
+1. Click "New" 
+2. Use the default Action of "Start a program"
+3. Click Browse or type in the path to the batch file ([which you have downloaded][script])
+
+By using a scheduled task that is triggered by these events, it seems like Windows 10 does reliably launch the batch file at shutdown (or more technically correct, at user logoff).
+
+
+### Changes from original solution
 The original solution also mentioned the following event, but I disabled that as it caused issues [#1](https://github.com/fatso83/vmware-auto-suspend/issues/1) and [#2](https://github.com/fatso83/vmware-auto-suspend/issues/2). I have seen no negative effects so far.
 ```
 Log:Security
