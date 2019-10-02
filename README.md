@@ -68,13 +68,15 @@ Event ID:6006
 ```
 Log:Security
 Source:Microsoft Windows security auditing.
-Event ID:4634
+Event ID:4647
 ```
 
+#### Changes from original solution
+The original solution also mentioned the following event, but I disabled that as it caused issues #1 and #2. I have seen no negative effects so far.
 ```
 Log:Security
 Source:Microsoft Windows security auditing.
-Event ID:4647
+Event ID:4634
 ```
 
 #### Actions tab
