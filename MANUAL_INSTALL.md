@@ -73,3 +73,5 @@ Log:Security
 Source:Microsoft Windows security auditing.
 Event ID:4634
 ```
+
+[script]: https://raw.githubusercontent.com/fatso83/vmware-auto-suspend/master/SuspendRunningVMs.bat
