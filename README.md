@@ -72,7 +72,7 @@ Event ID:4647
 ```
 
 #### Changes from original solution
-The original solution also mentioned the following event, but I disabled that as it caused issues #1 and #2. I have seen no negative effects so far.
+The original solution also mentioned the following event, but I disabled that as it caused issues [#1](https://github.com/fatso83/vmware-auto-suspend/issues/1) and [#2](https://github.com/fatso83/vmware-auto-suspend/issues/2). I have seen no negative effects so far.
 ```
 Log:Security
 Source:Microsoft Windows security auditing.
