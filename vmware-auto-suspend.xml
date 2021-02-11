@@ -49,7 +49,7 @@
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\SuspendRunningVMs.bat</Command>
+      <Command>C:\vmware-auto-suspend\SuspendRunningVMs.bat</Command>
     </Exec>
   </Actions>
 </Task>

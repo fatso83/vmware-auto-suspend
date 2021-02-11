@@ -16,12 +16,16 @@ that drawback. The original solution was published by [@drueter](https://github.
 
 ## Installing
 
-1. Download the [xml file][xml].
-1. Open a `CMD` or `Powershell` terminal  _as an Administrator_ and navigate to where the file was downloaded 
-1. Run `schtasks /create /TN "Auto Suspend VMWare instances" /XML vmware-auto-suspend.xml`
-1. Download the [script][script] and put it in `C:/`.
+<img src="./.assets/zip.png" />
 
-If you choose to place the script somewhere else, you need to open the Windows Task Scheduler, edit the ""Auto Suspend VMWare instances" task and browse to where the script is located.
+1. Download the repo as a zip and unzip it 
+1. Right click [`install.bat`][install] and _Run as Administrator_ 
+
+That's it.
+
+You should have something similar to the picture below if you examine the create
+task in the task list. See the [old manual install for details][old-manual], if you are interested.
+<img src="./.assets/events.png" />
 
 ## Background
 After a long and bumpy road through both [StackExchange][superuser] and the 
@@ -34,7 +38,19 @@ if you find bugs in the solution, I decided to improve on this situation
 by dumping the solution on GitHub. That fixes troublesome copy-paste
 issues.
 
+## Encounter any errors?
+Most errors ([5](https://github.com/fatso83/vmware-auto-suspend/issues/5),
+[7](https://github.com/fatso83/vmware-auto-suspend/issues/7),
+[8](https://github.com/fatso83/vmware-auto-suspend/issues/8),
+[9](https://github.com/fatso83/vmware-auto-suspend/issues/9)) are caused by
+not following the instructions, resulting in encoding issues when copy-pasting 
+the contents of the xml file manually. That is why I advocate 
+downloading the zip file to avoid this issue. See the above
+issues for a simple fix using Notepad.
+
 [vmware]: https://communities.vmware.com/thread/570079 "VMWare Community Post with original solution"
 [superuser]: https://superuser.com/questions/1482205/auto-snapshot-or-suspend-on-host-power-off-or-log-off "My StackExchange question"
 [script]: https://raw.githubusercontent.com/fatso83/vmware-auto-suspend/master/SuspendRunningVMs.bat
+[install]: https://raw.githubusercontent.com/fatso83/vmware-auto-suspend/master/install.bat
 [xml]: https://raw.githubusercontent.com/fatso83/vmware-auto-suspend/master/vmware-auto-suspend.xml
+[old-manual]: https://github.com/fatso83/vmware-auto-suspend/blob/e56fa94f08c5955c549a99649fd567c33d050ab3/MANUAL_INSTALL.md
