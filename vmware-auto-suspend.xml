@@ -44,7 +44,8 @@
     <Hidden>false</Hidden>
     <RunOnlyIfIdle>false</RunOnlyIfIdle>
     <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT72H</ExecutionTimeLimit>
+    <!-- https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itasksettings-get_executiontimelimit -->
+    <ExecutionTimeLimit>PT5M</ExecutionTimeLimit>
     <!-- https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itasksettings-get_priority -->
     <Priority>3</Priority>
   </Settings>
