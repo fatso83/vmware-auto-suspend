@@ -1,23 +1,27 @@
 @echo off
 echo SuspendRunningVMs Command (x64)...
+REM https://stackoverflow.com/questions/20691060/echo-a-blank-empty-line-to-the-console-from-a-windows-batch-file
+echo(
 echo Ideas for improving this? Visit https://github.com/fatso83/vmware-auto-suspend
+echo(
+echo(
 
 SETLOCAL
 REM Specify where vmrun.exe can be located
 SET WSPath="C:\Program Files (x86)\VMware\VMware Workstation"
 
 REM Get the list of currently running VMs
-%WSPath%\vmrun.exe list | FIND /V "Total running VMs:" > %temp%\vmlist.txt
+%WSPath%\vmrun.exe list > %temp%\vmlist.txt
 
 REM Suspend all running VMs
-FOR /F "delims=*" %%v IN (%temp%\vmlist.txt) DO CALL :SuspendVM "%%v"
+FOR /F "delims=* skip=1" %%v IN (%temp%\vmlist.txt) DO CALL :SuspendVM "%%v"
 
 :WaitLoop
 echo Waiting for the VMs to suspend...
 REM Pause until no more VMs are running
 %WSPath%\vmrun.exe list | FIND "Total running VMs: 0"
 IF NOT ERRORLEVEL 1 GOTO End
-timeout /t 10 /nobreak
+timeout /t 5/nobreak
 GOTO WaitLoop
  
 :End
@@ -27,21 +31,15 @@ GOTO :EOF
  
 REM Suspend a VM
 :SuspendVM
-REM Suspend any running VM.  Workaround a "vmrun list" quirk that outputs
-REM a blank line, by not trying to suspend a blank VM
-IF %1x==x GOTO :EOF
 echo Suspending VM %1
 %WSPath%\vmrun.exe suspend %1
 REM Allow some time after suspend call (allow disk to write vmem).
 echo Wait a little bit for the VM to commit...
-timeout /t 15 /nobreak
+timeout /t 10 /nobreak
 GOTO :EOF
  
 REM Resume a VM (not used now, but may have use in future)
 :ResumeVM
-REM Resume any suspended VM.  Workaround a "vmrun list" quirk that outputs
-REM a blank line, by not trying to start a blank VM
-IF %1x==x GOTO :EOF
 echo Starting VM %1
 %WSPath%\vmrun.exe start %1
 GOTO :EOF
